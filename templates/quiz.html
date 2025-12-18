@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="quiz-container text-center">
+    <h4 class="mb-4">Score: <span class="score-badge">{{ score }}</span></h4>
+    <p class="lead mb-4">{{ question }}</p>
+
+    <form method="POST">
+        {% for label, option in option_pairs %}
+            <button type="submit" name="answer" value="{{ option }}" class="btn btn-primary btn-quiz mb-2">{{ label }}. {{ option }}</button><br>
+        {% endfor %}
+    </form>
+</div>
+{% endblock %}
